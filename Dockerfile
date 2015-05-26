@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM ubuntu:14.04
 
 # Install MongoDB.
 RUN \
@@ -22,7 +22,7 @@ VOLUME ["/data/db"]
 WORKDIR /data
 
 # Define default command.
-CMD ["mongod"]
+CMD ["mongod", "--smallfiles"]
 
 # Expose ports.
 #   - 27017: process
